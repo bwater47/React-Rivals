@@ -10,7 +10,7 @@ import Like from "./components/Like";
 import { BsFillCalendarFill } from "react-icons/bs";
 // Boilerplate global css styles
 import "./App.css";
-
+// App function for static front end.
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
