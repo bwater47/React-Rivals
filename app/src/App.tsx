@@ -16,6 +16,7 @@ function App() {
 
   const [tags, setTags] = useState(["Tag 1", "Tag 2"]);
 
+  // useState array.
   const [drink, setDrink] = useState({
     title: "americano",
     price: 5,
