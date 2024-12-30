@@ -1,6 +1,7 @@
 // React
 import { useState } from "react";
 // Components
+import ExpandableText from "./components/ExpandableText";
 import Message from "./components/Message";
 import NavBar from "./components/NavBar";
 import ListGroup from "./components/ListGroup";
@@ -110,10 +111,12 @@ function App() {
 
   // Shopping example.
   const handleShopping = () => {
-    produce((draft: typeof shopping.shoppingItems) => {
-      const item = draft.find((item) => item.id === 1);
-      if (item) item.quantity += 1;
-    });
+    setShopping(
+      produce((draft) => {
+        const item = draft.shoppingItems.find((item) => item.id === 1);
+        if (item) item.quantity += 1;
+      })
+    );
   };
 
   return (
@@ -171,6 +174,30 @@ function App() {
       <div>
         <NavBar cartItemsCount={cartItems.length} />
         <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+      </div>
+      <div>
+        {shopping.shoppingItems.map((item) => (
+          <p key={item.id}>
+            {item.title} - {item.quantity}
+          </p>
+        ))}
+        <button onClick={handleShopping}>Add to Item 1</button>
+      </div>
+      <div>
+        <ExpandableText maxChars={25}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+          voluptatum possimus illo velit quisquam voluptatem quae omnis, sed
+          ducimus, sit cumque ipsam quis. Optio numquam veniam dignissimos, quas
+          fugiat voluptatem, porro, eaque eius accusantium ipsum eligendi? Non
+          et accusantium blanditiis soluta quidem illo distinctio, quae minus
+          repellat nulla voluptatum perferendis odit! Cupiditate odio
+          perspiciatis repellendus fugiat libero earum reiciendis vero
+          consequuntur obcaecati. Asperiores, voluptatem! Tempore ea sint
+          dignissimos fugit eum, asperiores exercitationem laudantium excepturi
+          laboriosam? Et non architecto saepe quas sapiente unde delectus
+          dolorum! Earum ea quae quo placeat molestias, quidem culpa quos! Fuga,
+          qui. Sint rerum mollitia quia consequuntur?
+        </ExpandableText>
       </div>
     </>
   );
