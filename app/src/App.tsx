@@ -15,6 +15,7 @@ import { BsFillCalendarFill } from "react-icons/bs";
 // Boilerplate global css styles
 import "./App.css";
 import Cart from "./components/Cart";
+
 // App function for static front end.
 function App() {
   // Shopping example
@@ -199,6 +200,7 @@ function App() {
           qui. Sint rerum mollitia quia consequuntur?
         </ExpandableText>
       </div>
+      {/* This is the end of the examples before the game category application */}
     </>
   );
 }

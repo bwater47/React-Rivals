@@ -16,7 +16,7 @@ const ExpandableText = ({ children, maxChars = 100 }: Props) => {
 
   return (
     <p>
-      {text}...
+      {text} ...{" "}
       <button onClick={() => setExpanded(!isExpanded)}>
         {isExpanded ? "Less" : "More"}
       </button>
